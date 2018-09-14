@@ -7,6 +7,7 @@ A series of helper scripts to reduce duplication across `script/bootstrap`s.
 - [`brew setup-nginx-conf`](cmd/brew-setup-nginx-conf.rb): Generates and installs a project nginx configuration using erb.
 - [`brew upgrade-mysql`](cmd/brew-upgrade-mysql): Upgrade MySQL from 5.6 to 5.7 and maintain a development `my.cnf` configuration.
 - [`ruby-definitions/`](ruby-definitions): `ruby-build` definitions for GitHub Rubies (from [boxen/puppet-ruby](https://github.com/boxen/puppet-ruby/tree/master/files/definitions)).
+- [`brew bootstrap-pyenv-python`](cmd/brew-bootstrap-pyenv-python): Installs Python and Pipenv.
 
 ## Usage
 
