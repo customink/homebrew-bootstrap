@@ -1,28 +1,26 @@
 # Homebrew Bootstrap
-A series of helper scripts to reduce duplication across `script/bootstrap`s.
+Orginally forked from [`github/homebrew-bootstrap`](https://github.com/github/homebrew-bootstrap), this homebrew tap makes available a command to help get python set up automatically based on a `.python-version` file, and leverages `pipenv` to handle dependency bundling.
 
-- [`brew bootstrap-rbenv-ruby`](cmd/brew-bootstrap-rbenv-ruby): Installs Ruby and Bundler.
-- [`brew report-issue`](cmd/brew-report-issue.rb): Creates and closes failure debugging issues on a project.
-- [`brew bootstrap-nodenv-node`](cmd/brew-bootstrap-nodenv-node): Installs Node and npm.
-- [`brew setup-nginx-conf`](cmd/brew-setup-nginx-conf.rb): Generates and installs a project nginx configuration using erb.
-- [`brew upgrade-mysql`](cmd/brew-upgrade-mysql): Upgrade MySQL from 5.6 to 5.7 and maintain a development `my.cnf` configuration.
-- [`ruby-definitions/`](ruby-definitions): `ruby-build` definitions for GitHub Rubies (from [boxen/puppet-ruby](https://github.com/boxen/puppet-ruby/tree/master/files/definitions)).
 - [`brew bootstrap-pyenv-python`](cmd/brew-bootstrap-pyenv-python): Installs Python and Pipenv.
 
 ## Usage
 
 ```bash
-brew tap github/bootstrap
-brew bootstrap-rbenv-ruby # or any other script
+brew tap customink/bootstrap
+brew bootstrap-pyenv-python
 ```
+The following should be comitted to your application repo:
+* `.python-version` to specify the proper python version.
+* `Pipfile` and `Pipfile.lock` for specifying dependency versions.
 
 ## Status
 In active development.
 
-[![Build Status](https://travis-ci.org/github/homebrew-bootstrap.svg)](https://travis-ci.org/github/homebrew-bootstrap)
-
-## Contact
+## Original Author
 [@mikemcquaid](https://github.com/mikemcquaid/)
+
+## Forked with ❤️ for Custom Ink's python developers by
+[@rypit](https://github.com/rypit/)
 
 ## License
 Homebrew Bootstrap is licensed under the [MIT License](http://en.wikipedia.org/wiki/MIT_License).
