@@ -88,8 +88,8 @@ if [ "$(pyenv exec python --version)" != "$(python --version)" ]; then
   abort_with_shell_setup_message
 fi
 
-(which pipenv &>/dev/null) || {
-  brew install pipenv
+(pipenv --version &>/dev/null) || {
+  pip install pipenv
 }
 pipenv install
 
