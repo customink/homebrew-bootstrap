@@ -91,6 +91,11 @@ fi
 (which pipenv &>/dev/null) || {
   brew install pipenv
 }
+
+if ! env | grep ^PIPENV_PYTHON= > /dev/null; then
+  abort 'Error: add `export PIPENV_PYTHON=$PYENV_ROOT/shims/python` to the end of your .bash_profile!'
+fi
+
 pipenv install
 
 EXPECTED_EXIT="1"
