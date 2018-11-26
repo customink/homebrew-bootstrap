@@ -73,7 +73,7 @@ if ! pyenv version-name &>/dev/null; then
     PYTHON_DEFINITION="$BASE_PATH/python-definitions/$PYTHON_REQUESTED"
 
     if ! [ -f "$PYTHON_DEFINITION" ]; then
-      warn  "Error: cannot find Ruby $PYTHON_REQUESTED definition in python-build or at:"
+      warn  "Error: cannot find Python $PYTHON_REQUESTED definition in python-build or at:"
       abort "$PYTHON_DEFINITION"
     fi
   fi
