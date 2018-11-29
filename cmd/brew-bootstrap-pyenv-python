@@ -73,7 +73,7 @@ if ! pyenv version-name &>/dev/null; then
     PYTHON_DEFINITION="$BASE_PATH/python-definitions/$PYTHON_REQUESTED"
 
     if ! [ -f "$PYTHON_DEFINITION" ]; then
-      warn  "Error: cannot find Ruby $PYTHON_REQUESTED definition in python-build or at:"
+      warn  "Error: cannot find Python $PYTHON_REQUESTED definition in python-build or at:"
       abort "$PYTHON_DEFINITION"
     fi
   fi
@@ -88,9 +88,14 @@ if [ "$(pyenv exec python --version)" != "$(python --version)" ]; then
   abort_with_shell_setup_message
 fi
 
-(pipenv --version &>/dev/null) || {
-  pip install pipenv
+(which pipenv &>/dev/null) || {
+  brew install pipenv
 }
+
+if ! env | grep ^PIPENV_PYTHON= > /dev/null; then
+  abort 'Error: add `export PIPENV_PYTHON=$PYENV_ROOT/shims/python` to the end of your .bash_profile! If `$PYENV_ROOT` is not set, use `$(pyenv root)` instead.'
+fi
+
 pipenv install
 
 EXPECTED_EXIT="1"
