@@ -6,7 +6,7 @@ Orginally forked from [`github/homebrew-bootstrap`](https://github.com/github/ho
 ## Usage
 
 ```bash
-brew tap customink/bootstrap
+brew tap customink/bootstrap-python
 brew bootstrap-pyenv-python
 ```
 The following should be comitted to your application repo:
