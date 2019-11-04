@@ -96,7 +96,5 @@ if [ "$(pyenv exec python --version)" != "$(python --version)" ]; then
   abort_with_shell_setup_message
 fi
 
-pipenv install
-
 EXPECTED_EXIT="1"
 exit 0
