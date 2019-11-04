@@ -62,8 +62,8 @@ if ! which pyenv &>/dev/null; then
 fi
 
 if ! pyenv version-name &>/dev/null; then
-  if ! [[ -z "$RBENV_VERSION" ]]; then
-    PYTHON_REQUESTED="$RBENV_VERSION"
+  if ! [[ -z "$PYENV_VERSION" ]]; then
+    PYTHON_REQUESTED="$PYENV_VERSION"
   else
     PYTHON_REQUESTED="$(pyenv local)"
   fi
