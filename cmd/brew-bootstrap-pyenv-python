@@ -92,6 +92,10 @@ fi
   brew install pipenv
 }
 
+(which poetry &>/dev/null) || {
+  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/1.0.3/get-poetry.py | python
+}
+
 if [ "$(pyenv exec python --version)" != "$(python --version)" ]; then
   abort_with_shell_setup_message
 fi
